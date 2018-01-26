@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DownloadButtonPrototype</title>
+    <script src="vue.js"></script>
 </head>
 <body>
     <div id = "vue-app">
-        <div>
-            <downloadButton></downloadButton>
-        </div>
+        <p> hi vue</p>
+        
+        <download-button></download-button>
     </div>
 </body>
-</html>
 
-<template id = "downloadButton">
+<template id = "download-button">
     <div>
-        <button v-on:click = "">
+        <button v-on:click = 'downloadCrap'>
             Download
         </button>
-        <p >this is the download button for test</p>
+        <!-- <p >this is the download button for test</p> -->
     </div>
 </template>
+<script src="main.js"></script>
+</html>
