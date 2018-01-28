@@ -28,7 +28,7 @@ Vue.component('download-button',{
     },
     created: function(){
     }
-})
+});
 
 
 var vm = new Vue({
@@ -46,5 +46,5 @@ var vm = new Vue({
     methods:{
 
     }
-})
+});
 
