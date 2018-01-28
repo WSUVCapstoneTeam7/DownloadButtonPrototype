@@ -1,19 +1,21 @@
 
 Vue.component('download-button',{
     template:   '<div>'+
-                    '<button v-on:click = \'downloadCrap\'>'+
+                    '<button v-on:click = \'downloadStuff\'>'+
                         'Download'+
                     '</button>'+
                 '</div>',
     data: function(){
         return {
-            
-        }
+        };
     },
     methods:{
-        downloadStuff: function (fileName, mapData){
+        downloadStuff: function (){
+            var fileName = "seat-map.json";
+            var jsonString = JSON.stringify(vm.mapData);    
+
             var element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(mapData));
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonString));
             element.setAttribute('download', fileName);
         
             element.style.display = 'none';
@@ -22,17 +24,7 @@ Vue.component('download-button',{
             element.click();
         
             document.body.removeChild(element);
-            
-            // Start file download.
         },
-        downloadCrap: function(){
-                        // Generate download of hello.txt file with some content
-            var fileName = "seat-map.json";
-            var jsonString = JSON.stringify(vm.mapData);
-            var blob = new Blob([jsonString], {type: "application/json"});
-            console.log(blob);
-            this.downloadStuff(fileName, jsonString);
-        }
     },
     created: function(){
     }
